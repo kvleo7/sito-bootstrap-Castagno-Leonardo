@@ -1,42 +1,210 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
+    <link rel ="shortcut icon" href="/sonolamusica.jpg" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Home pagina sito</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Inline CSS -->
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      }
+
+      .navbar-brand {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      .navbar-nav .nav-item {
+        padding: 10px 20px;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        color: #fff !important;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ff7e5f !important;
+      }
+
+      .hero-section {
+        background: url('https://via.placeholder.com/1920x1080/000000/fff?text=Lebron+Portfolio') no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        color: #fff;
+        animation: fadeInUp 2s ease-out;
+      }
+
+      .hero-section h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+        animation: fadeInUp 2s ease-out;
+      }
+
+      .hero-section p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-top: 20px;
+        animation: fadeInUp 3s ease-out;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 40px 0;
+        color: #ff7e5f;
+        letter-spacing: 1px;
+      }
+
+      .card {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .card img {
+        border-radius: 15px;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .container {
+        margin-top: 100px;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 3.5rem;
+        }
+
+        .hero-section p {
+          font-size: 1.2rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    
-    <nav class="navbar navbar-expand-lg bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Seleziona la pagina</a>
+          <a class="navbar-brand" href="#">Home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">chi-sono</a>
+                <a href="chiSono.html" class="nav-link">Chi sono?</a>
               </li>
-              
             </ul>
-            <span class="navbar-text">
-              Navbar text with an inline element
-            </span>
           </div>
         </div>
-      </nav>
+    </nav>
 
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Benvenuto nel mio sito ;)</h1>
+        <p>qua sotto puoi trovare alcune delle mie passioni e qualcosa su di me</p>
+    </div>
 
-    <h1>HOME</h1>
+    <!-- Passion Cards -->
+    <div class="container">
+      <h2 class="section-title">Le mie passioni</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Passion Card 1 -->
+        <div class="col">
+          <div class="card">
+            <img src="https://www.sprintesport.it/resizer/750/500/true/2023_10_29/William_Borgo_e_Loris_Tietto-1698596283505.jpg--william_borgo_e_loris_tietto.jpg?1698596283572" class="card-img-top" alt="William Borgo e Loris Tietto">
+            <div class="card-body">
+              <h5 class="card-title">Basketball</h5>
+              <p class="card-text">Il basket è una delle mie passioni principali. Giocare mi piace veramente un sacco, sia con gli amici che da solo, mi aiuta a liberare la mente.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Passion Card 2 -->
+        <div class="col">
+          <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Playboi_Carti.jpg/1024px-Playboi_Carti.jpg" class="card-img-top" alt="Playboi Carti">
+            <div class="card-body">
+              <h5 class="card-title">Musica</h5>
+              <p class="card-text">La musica è un altro aspetto centrale della mia vita. Mi piace ascoltare cantanti tipo: Playboy Carti, Chief Keef ecc...</p>
+            </div>
+          </div>
+        </div>
+        <!-- Passion Card 3 -->
+        <div class="col">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1626218174358-7769486c4b79?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UEMlMjBkYSUyMGdpb2NvfGVufDB8fDB8fHww" class="card-img-top" alt="Altra passione">
+            <div class="card-body">
+              <h5 class="card-title">Tecnologia</h5>
+              <p class="card-text">Sono anche un appassionato di tecnologia. Mi piace programmare sia siti, che applicazioni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer text-center mt-5 p-4">
+      <p>
+         </p>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <img  height="400px" width="400px" src="https://static.independent.co.uk/2025/03/18/20/38/Screenshot-2025-03-18-at-4-37-24-PM.png?trim=0,259,0,159&width=1200&height=800&crop=1200:800" class="img-fluid" alt="...">
-
-    
-
-</body>
+  </body>
 </html>
